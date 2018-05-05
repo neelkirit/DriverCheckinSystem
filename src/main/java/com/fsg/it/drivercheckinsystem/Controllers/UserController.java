@@ -18,28 +18,27 @@ public class UserController {
     @RequestMapping(value = "/fetchAll", method= RequestMethod.GET)
     public ArrayList<UserDetails> fetchAllUsers(){
         return userService.fetchAllUsers();
-    }
+    }//API TESTED
 
-    @RequestMapping(value = "/addUser", method= RequestMethod.POST, consumes = "application/json")
-    private @ResponseBody
+    @RequestMapping(value = "/add", method = RequestMethod.POST, consumes = "application/json")
+    public @ResponseBody
     StatusResponse addUser(@RequestBody UserDetails userDetails) {
-        StatusResponse status  = userService.addUser(userDetails);
-        return status;
-    }
+        return userService.addUser(userDetails);
+    }//API TESTED
 
     @RequestMapping(value = "/findByBaseTeamId", method= RequestMethod.POST, consumes = "application/json")
     public @ResponseBody ArrayList<UserDetails> findByBaseTeamId(@RequestBody UserDetails userDetails) {
         return userService.findByBaseTeamId(userDetails.getBaseTeamId());
-    }
+    }//API TESTED
 
     @RequestMapping(value = "/findByEventTeamId", method= RequestMethod.POST, consumes = "application/json")
     public @ResponseBody ArrayList<UserDetails> findByEventTeamId(@RequestBody UserDetails userDetails) {
         return userService.findByEventTeamId(userDetails.getEventTeamId());
-    }
+    }//API TESTED
 
     @RequestMapping(value = "/findByCarNumber", method= RequestMethod.POST, consumes = "application/json")
     public @ResponseBody ArrayList<UserDetails> findByCarNumber(@RequestBody UserDetails userDetails) {
         return userService.findByCarNumber(userDetails.getCarNumber());
-    }
+    }//API TESTED
 
 }
