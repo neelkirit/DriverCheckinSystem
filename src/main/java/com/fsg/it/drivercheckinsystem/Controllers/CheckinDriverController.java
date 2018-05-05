@@ -21,8 +21,7 @@ public class CheckinDriverController {
     private @ResponseBody
     StatusResponse checkinDriverBriefing(@RequestBody CheckinRequest checkinRequest) {
         LOG.info(">> Driver Checkin Controller <<");
-        StatusResponse status  = checkinDriverService.checkinDriverBriefing(checkinRequest);
-        return status;
+        return checkinDriverService.checkinDriverBriefing(checkinRequest);
     }
 
 }

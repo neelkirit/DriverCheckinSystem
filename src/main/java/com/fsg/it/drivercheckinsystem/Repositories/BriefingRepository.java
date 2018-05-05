@@ -9,5 +9,5 @@ import javax.transaction.Transactional;
 public interface BriefingRepository extends CrudRepository<BriefingDetails, String> {
 
     @Transactional
-    public BriefingDetails findById(@Param("id") Integer id);
+    BriefingDetails findById(@Param("id") Integer id);
 }

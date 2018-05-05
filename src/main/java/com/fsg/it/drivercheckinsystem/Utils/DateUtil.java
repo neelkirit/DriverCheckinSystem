@@ -1,6 +1,5 @@
 package com.fsg.it.drivercheckinsystem.Utils;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;

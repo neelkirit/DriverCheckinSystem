@@ -14,7 +14,7 @@ public class RegistrationDetails {
     @Id
     @GenericGenerator(name="id", strategy="increment")
     @GeneratedValue(generator = "id")
-    @Column(name = "id", insertable = true, unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     private Integer id;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -31,11 +31,11 @@ public class RegistrationDetails {
     private String registrarionCounter;
 
     @CreationTimestamp
-    @Column(name = "created_at", insertable = true, nullable = true, updatable = false )
+    @Column(name = "created_at", updatable = false)
     private Date createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at", insertable = true, nullable = true, updatable = true)
+    @Column(name = "updated_at")
     private Date updatedAt;
 
     public Integer getId() {

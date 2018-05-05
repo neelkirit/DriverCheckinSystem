@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public interface DriversRepository extends CrudRepository<DriverDetails, String> {
 
     @Transactional
-    public DriverDetails findById(@Param("id") Integer id);
+    DriverDetails findById(@Param("id") Integer id);
 
     @Transactional
-    public DriverDetails findByTagId(@Param("tagId") String tagId);
+    DriverDetails findByTagId(@Param("tagId") String tagId);
 
     @Transactional
     @Query(value = "SELECT d FROM DriverDetails d WHERE d.userDetails.universityName LIKE :universityName")
-    public ArrayList<DriverDetails> findByUniversity(@Param("universityName") String universityName);
+    ArrayList<DriverDetails> findByUniversity(@Param("universityName") String universityName);
 }
